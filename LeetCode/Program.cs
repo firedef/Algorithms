@@ -1,3 +1,3 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using LeetCode.problems;
 
-Console.WriteLine("Hello, World!");
+Console.WriteLine(BinaryString.Solution("1111000101", 5));
