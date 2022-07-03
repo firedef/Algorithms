@@ -1,3 +1,3 @@
 ﻿using LeetCode.problems;
 
-Console.WriteLine(BinaryString.Solution("1111000101", 5));
+Console.WriteLine(DeleteAndEarn.Solve(new[] {8,10,4,9,1,3,5,9,4,10}));
