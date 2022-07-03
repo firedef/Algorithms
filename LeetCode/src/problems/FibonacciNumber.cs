@@ -7,7 +7,13 @@ public static class FibonacciNumber {
     /// that each number is the sum of the two preceding ones, starting from 0 and 1
     /// </summary>
     public static int Solve(int n) {
+        int[] cache = new int[n + 1];
+        return Fib(n, cache);
+    }
+    
+    private static int Fib(int n, int[] cache) {
         if (n <= 1) return n;
-        return Solve(n - 1) + Solve(n - 2);
+        if (cache[n] != 0) return cache[n];
+        return cache[n] = Fib(n - 1, cache) + Fib(n - 2, cache);
     }
 }
