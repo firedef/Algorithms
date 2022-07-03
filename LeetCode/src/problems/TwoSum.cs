@@ -1,4 +1,4 @@
-namespace LeetCode.twoSum; 
+namespace LeetCode.problems; 
 
 public static class TwoSum {
     /// <summary>
