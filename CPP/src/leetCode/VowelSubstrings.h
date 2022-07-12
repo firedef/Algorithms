@@ -13,7 +13,14 @@ public:
         int len = static_cast<int>(word.size());
         int c = 0;
         
-        // bitset for all vowels (0x61 to 0x75 = 20 bits)
+        const uint32_t consonantMask = (
+                (1 << ('a' - 'a')) | 
+                (1 << ('e' - 'a')) | 
+                (1 << ('i' - 'a')) | 
+                (1 << ('o' - 'a')) | 
+                (1 << ('u' - 'a')));
+        
+        // bitset for all lowercase letters (utf-8)
         // replacement for unordered_set
         uint32_t presentChars = 0;
         int vowels = 0; // vowel count
@@ -23,9 +30,9 @@ public:
             for (int right = left; right < len; ++right) {
                 ch = word[right];
                 
-                if (ch != 'a' && ch != 'e' && ch != 'i' && ch != 'o' && ch != 'u') break; // if not a vowel, break
-
                 uint32_t mask = 1 << (ch - 'a'); // specific bit for current char
+                
+                if ((mask & consonantMask) == 0) break; // if not a vowel, break
                 
                 // if bit is not set (vowel not present), then increment vowel count and set bit
                 if ((presentChars & mask) == 0) {
