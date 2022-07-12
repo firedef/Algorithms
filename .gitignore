@@ -3,3 +3,5 @@ obj/
 /packages/
 riderModule.iml
 /_ReSharper.Caches/
+/CPP/cmake-build-debug/
+/CPP/cmake-build-release/
