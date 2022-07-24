@@ -1,3 +1,5 @@
-﻿using CSharp.other;
+﻿using System.Threading.Channels;
+using CSharp.leetCode;
+using CSharp.other;
 
-FibonacciSequencePrint.PrintArr(50_000, 1);
+FibonacciSequencePrint.PrintArr(1_000_000, 1);
